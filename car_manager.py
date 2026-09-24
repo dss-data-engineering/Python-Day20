@@ -16,7 +16,6 @@ class CarManager(Turtle):
         self.shapesize(stretch_wid=1, stretch_len=2)
         self.setheading(HEADING)
         self.starting_position()
-        self.move_speed = 0.1
 
     def drive(self):
         self.forward(MOVE_INCREMENT)

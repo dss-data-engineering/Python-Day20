@@ -5,7 +5,7 @@ import player
 from player import Player
 from car_manager import CarManager
 from scoreboard import Scoreboard
-NEW_CAR_MOVE_SPEED = 0.1
+NEW_MOVE_SPEED = 0.1
 
 cars = []
 
@@ -25,10 +25,9 @@ while game_is_on:
     screen.update()
     if new_car_cue%6 == 0:
         car = CarManager()
-        car.move_speed = NEW_CAR_MOVE_SPEED
         cars.append(car)
     new_car_cue += 1
-    time.sleep(cars[0].move_speed)
+    time.sleep(NEW_MOVE_SPEED)
     for car in cars:
         car.drive()
         if car.xcor()<-320:
@@ -38,7 +37,7 @@ while game_is_on:
             scoreboard.game_over()
             game_is_on = False
     if myturtle.ycor() > player.FINISH_LINE_Y:
-        NEW_CAR_MOVE_SPEED *= 0.8
+        NEW_MOVE_SPEED *= 0.8
         scoreboard.clear()
         scoreboard.increase_score()
         myturtle.reset_position()
