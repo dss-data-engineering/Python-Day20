@@ -22,7 +22,6 @@ screen.onkey(myturtle.move, "Up")
 game_is_on = True
 new_car_cue = 0
 while game_is_on:
-    print(f"Cars left: {len(cars)}")
     screen.update()
     if new_car_cue%6 == 0:
         car = CarManager()
